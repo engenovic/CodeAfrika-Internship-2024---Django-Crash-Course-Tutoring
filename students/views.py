@@ -19,7 +19,7 @@ def student_detail(request, id):
         raise Http404("Student with the specified ID was not found!")
     return render(
         request,
-        'students/templates/detail.html',
+        'students/templates/student/detail.html',
         {'student': student}
     )
 
@@ -30,7 +30,7 @@ def student_detail(request, id):
    student = get_object_or_404(Student,id=id)
    return render(
         request,
-        'students/templates/detail.html',
+        'students/templates/student/detail.html',
         {'student': student}
     )
 
