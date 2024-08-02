@@ -1,19 +1,25 @@
 {% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>{% block title %}{% endblock %}</title>
-<link href="{% static "css/student.css" %}" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link href="{% static 'css/student.css' %}" rel="stylesheet">
 </head>
 <body>
-
-<div id="content">
-    {% block content %}
-    {% endblock %}
+    <div class="navbar">
+        <div class="logo">
+            <img src="{% static 'images/logo.png' %}" alt="Elib App Logo">
+            <div class="title">Elib App</div>
+        </div>
+        <div class="avatar">
+            <img src="{% static 'images/avatar.png' %}" alt="User Avatar">
+        </div>
     </div>
-    <div id="sidebar">
-    <h2>My blog</h2>
-    <p>This is my blog.</p>
-</div>
+    <div id="content">
+        {% block content %}
+        {% endblock %}
+    </div>
 </body>
 </html>

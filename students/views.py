@@ -7,7 +7,7 @@ from .models import Student
 # Display a list of all students
 def student_list(request):
     students = Student.objects.all()
-    return render(request, 'students/templates/list.html',{'students':students})
+    return render(request, 'student/list.html',{'students':students})
 
 
 '''
@@ -19,7 +19,7 @@ def student_detail(request, id):
         raise Http404("Student with the specified ID was not found!")
     return render(
         request,
-        'students/templates/student/detail.html',
+        'student/detail.html',
         {'student': student}
     )
 
@@ -30,7 +30,7 @@ def student_detail(request, id):
    student = get_object_or_404(Student,id=id)
    return render(
         request,
-        'students/templates/student/detail.html',
+        'student/detail.html',
         {'student': student}
     )
 
